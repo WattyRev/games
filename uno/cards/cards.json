@@ -1,0 +1,439 @@
+[
+    {
+        "color": "blue",
+        "cardName": "0"
+    },
+    {
+        "color": "blue",
+        "cardName": "1"
+    },
+    {
+        "color": "blue",
+        "cardName": "2"
+    },
+    {
+        "color": "blue",
+        "cardName": "3"
+    },
+    {
+        "color": "blue",
+        "cardName": "4"
+    },
+    {
+        "color": "blue",
+        "cardName": "5"
+    },
+    {
+        "color": "blue",
+        "cardName": "6"
+    },
+    {
+        "color": "blue",
+        "cardName": "7"
+    },
+    {
+        "color": "blue",
+        "cardName": "8"
+    },
+    {
+        "color": "blue",
+        "cardName": "9"
+    },
+    {
+        "color": "blue",
+        "cardName": "1"
+    },
+    {
+        "color": "blue",
+        "cardName": "2"
+    },
+    {
+        "color": "blue",
+        "cardName": "3"
+    },
+    {
+        "color": "blue",
+        "cardName": "4"
+    },
+    {
+        "color": "blue",
+        "cardName": "5"
+    },
+    {
+        "color": "blue",
+        "cardName": "6"
+    },
+    {
+        "color": "blue",
+        "cardName": "7"
+    },
+    {
+        "color": "blue",
+        "cardName": "8"
+    },
+    {
+        "color": "blue",
+        "cardName": "9"
+    },
+    {
+        "color": "blue",
+        "cardName": "Draw Two"
+    },
+    {
+        "color": "blue",
+        "cardName": "Draw Two"
+    },
+    {
+        "color": "blue",
+        "cardName": "Reverse"
+    },
+    {
+        "color": "blue",
+        "cardName": "Reverse"
+    },
+    {
+        "color": "blue",
+        "cardName": "Skip"
+    },
+    {
+        "color": "blue",
+        "cardName": "Skip"
+    },
+
+    {
+        "color": "green",
+        "cardName": "0"
+    },
+    {
+        "color": "green",
+        "cardName": "1"
+    },
+    {
+        "color": "green",
+        "cardName": "2"
+    },
+    {
+        "color": "green",
+        "cardName": "3"
+    },
+    {
+        "color": "green",
+        "cardName": "4"
+    },
+    {
+        "color": "green",
+        "cardName": "5"
+    },
+    {
+        "color": "green",
+        "cardName": "6"
+    },
+    {
+        "color": "green",
+        "cardName": "7"
+    },
+    {
+        "color": "green",
+        "cardName": "8"
+    },
+    {
+        "color": "green",
+        "cardName": "9"
+    },
+    {
+        "color": "green",
+        "cardName": "1"
+    },
+    {
+        "color": "green",
+        "cardName": "2"
+    },
+    {
+        "color": "green",
+        "cardName": "3"
+    },
+    {
+        "color": "green",
+        "cardName": "4"
+    },
+    {
+        "color": "green",
+        "cardName": "5"
+    },
+    {
+        "color": "green",
+        "cardName": "6"
+    },
+    {
+        "color": "green",
+        "cardName": "7"
+    },
+    {
+        "color": "green",
+        "cardName": "8"
+    },
+    {
+        "color": "green",
+        "cardName": "9"
+    },
+    {
+        "color": "green",
+        "cardName": "Draw Two"
+    },
+    {
+        "color": "green",
+        "cardName": "Draw Two"
+    },
+    {
+        "color": "green",
+        "cardName": "Reverse"
+    },
+    {
+        "color": "green",
+        "cardName": "Reverse"
+    },
+    {
+        "color": "green",
+        "cardName": "Skip"
+    },
+    {
+        "color": "green",
+        "cardName": "Skip"
+    },
+
+    {
+        "color": "red",
+        "cardName": "0"
+    },
+    {
+        "color": "red",
+        "cardName": "1"
+    },
+    {
+        "color": "red",
+        "cardName": "2"
+    },
+    {
+        "color": "red",
+        "cardName": "3"
+    },
+    {
+        "color": "red",
+        "cardName": "4"
+    },
+    {
+        "color": "red",
+        "cardName": "5"
+    },
+    {
+        "color": "red",
+        "cardName": "6"
+    },
+    {
+        "color": "red",
+        "cardName": "7"
+    },
+    {
+        "color": "red",
+        "cardName": "8"
+    },
+    {
+        "color": "red",
+        "cardName": "9"
+    },
+    {
+        "color": "red",
+        "cardName": "1"
+    },
+    {
+        "color": "red",
+        "cardName": "2"
+    },
+    {
+        "color": "red",
+        "cardName": "3"
+    },
+    {
+        "color": "red",
+        "cardName": "4"
+    },
+    {
+        "color": "red",
+        "cardName": "5"
+    },
+    {
+        "color": "red",
+        "cardName": "6"
+    },
+    {
+        "color": "red",
+        "cardName": "7"
+    },
+    {
+        "color": "red",
+        "cardName": "8"
+    },
+    {
+        "color": "red",
+        "cardName": "9"
+    },
+    {
+        "color": "red",
+        "cardName": "Draw Two"
+    },
+    {
+        "color": "red",
+        "cardName": "Draw Two"
+    },
+    {
+        "color": "red",
+        "cardName": "Reverse"
+    },
+    {
+        "color": "red",
+        "cardName": "Reverse"
+    },
+    {
+        "color": "red",
+        "cardName": "Skip"
+    },
+    {
+        "color": "red",
+        "cardName": "Skip"
+    },
+
+    {
+        "color": "yellow",
+        "cardName": "0"
+    },
+    {
+        "color": "yellow",
+        "cardName": "1"
+    },
+    {
+        "color": "yellow",
+        "cardName": "2"
+    },
+    {
+        "color": "yellow",
+        "cardName": "3"
+    },
+    {
+        "color": "yellow",
+        "cardName": "4"
+    },
+    {
+        "color": "yellow",
+        "cardName": "5"
+    },
+    {
+        "color": "yellow",
+        "cardName": "6"
+    },
+    {
+        "color": "yellow",
+        "cardName": "7"
+    },
+    {
+        "color": "yellow",
+        "cardName": "8"
+    },
+    {
+        "color": "yellow",
+        "cardName": "9"
+    },
+    {
+        "color": "yellow",
+        "cardName": "1"
+    },
+    {
+        "color": "yellow",
+        "cardName": "2"
+    },
+    {
+        "color": "yellow",
+        "cardName": "3"
+    },
+    {
+        "color": "yellow",
+        "cardName": "4"
+    },
+    {
+        "color": "yellow",
+        "cardName": "5"
+    },
+    {
+        "color": "yellow",
+        "cardName": "6"
+    },
+    {
+        "color": "yellow",
+        "cardName": "7"
+    },
+    {
+        "color": "yellow",
+        "cardName": "8"
+    },
+    {
+        "color": "yellow",
+        "cardName": "9"
+    },
+    {
+        "color": "yellow",
+        "cardName": "Draw Two"
+    },
+    {
+        "color": "yellow",
+        "cardName": "Draw Two"
+    },
+    {
+        "color": "yellow",
+        "cardName": "Reverse"
+    },
+    {
+        "color": "yellow",
+        "cardName": "Reverse"
+    },
+    {
+        "color": "yellow",
+        "cardName": "Skip"
+    },
+    {
+        "color": "yellow",
+        "cardName": "Skip"
+    },
+
+
+    {
+        "color": "none",
+        "cardName": "Wild"
+    },
+    {
+        "color": "none",
+        "cardName": "Wild"
+    },
+    {
+        "color": "none",
+        "cardName": "Wild"
+    },
+    {
+        "color": "none",
+        "cardName": "Wild"
+    },
+    {
+        "color": "none",
+        "cardName": "Wild Draw 4"
+    },
+    {
+        "color": "none",
+        "cardName": "Wild Draw 4"
+    },
+    {
+        "color": "none",
+        "cardName": "Wild Draw 4"
+    },
+    {
+        "color": "none",
+        "cardName": "Wild Draw 4"
+    }
+]
