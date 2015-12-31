@@ -1,0 +1,127 @@
+//Helper classes
+.unstyled {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.panel {
+    width: 100vw;
+    min-height: 100vh;
+}
+.text-center {
+    text-align:center;
+}
+.text-right {
+    text-align: right;
+}
+.form-group {
+    label {
+        display:block;
+    }
+    input, textarea {
+        display:block;
+        width: 100%;
+    }
+    input[type="checkbox"] {
+        width: auto;
+    }
+    .checkbox, .toggle {
+        display:inline-block;
+    }
+    p {
+        margin: 10px;
+    }
+}
+.danger {
+    color: @red;
+}
+.success {
+    color: @green;
+}
+.info {
+    color: @blue;
+}
+.hidden {
+    display: none;
+
+    &-xs {
+        @media screen and (max-width: @screen-xs) {
+            display:none;
+        }
+    }
+    &-sm {
+        @media screen and (min-width: @screen-xs) and (max-width: @screen-sm) {
+            display:none;
+        }
+    }
+    &-md {
+        @media screen and (min-width: @screen-sm) and (max-width: @screen-md) {
+            display:none;
+        }
+    }
+    &-lg {
+        @media screen and (min-width: @screen-md) and (max-width: @screen-lg) {
+            display:none;
+        }
+    }
+    &-xl {
+        @media screen and (min-width: @screen-lg) {
+            display:none;
+        }
+    }
+}
+.width-px-35 {
+    width: 35px;
+}
+.clearfix:after {
+    display:block;
+    clear:both;
+    content: '';
+}
+
+//grid
+.row {
+    &:after {
+        content: '';
+        display:block;
+        clear:both;
+    }
+}
+.col {
+    padding: 15px;
+    float: left;
+}
+.col- {
+    .columns( @index ) when ( @index < 13) {
+        .columns( @index + 1 ); // iterate.
+
+        @width: @index / 12 * 100;
+
+        &@{index} {
+            width: unit(@width, %);
+        }
+    }
+    &xs- {
+        .columns(1);
+    }
+    &sm- {
+        @media screen and (min-width: @screen-xs) {
+            .columns(1);
+        }
+    }
+    &md- {
+        @media screen and (min-width: @screen-sm) {
+            .columns(1);
+        }
+    }
+    &lg- {
+        @media screen and (min-width: @screen-md) {
+            .columns(1);
+        }
+    }
+    &xl- {
+        @media screen and (min-width: @screen-lg) {
+            .columns(1);
+        }
+    }
+}

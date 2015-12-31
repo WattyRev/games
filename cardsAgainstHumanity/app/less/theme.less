@@ -1,0 +1,157 @@
+//General
+* {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    color: @gray-darkest;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+h1,h2,h3,h4 {
+    margin: 0 0 20px 0;
+}
+h1 {
+    font-size: 36px;
+    line-height: 44px;
+}
+h2 {
+    margin: 0;
+    font-size: 36px;
+    line-height: 43px;
+}
+a {
+    color: @gray-darkest;
+    cursor: pointer;
+}
+nav {
+    white-space: nowrap;
+    a {
+        color: @black;
+        text-transform: uppercase;
+    }
+}
+input {
+    &[type="text"], &[type="email"], &[type="number"], &[type="password"] {
+        padding: 10px;
+        border: 1px solid @gray-light;
+    }
+}
+textarea {
+    padding: 10px;
+    border: 1px solid @gray-light;
+    height: 150px;
+    resize: vertical;
+}
+small {
+    font-size: .8em;
+
+    > * {
+        font-size: .8em;
+    }
+    @media screen and (max-width: @screen-sm) {
+        display:block;
+    }
+}
+[ng-click] {
+    cursor:pointer;
+}
+:disabled {
+    background: @gray-lighter;
+}
+.pull-left {
+    float: left;
+}
+.pull-right {
+    float: right;
+}
+.container {
+    max-width: @max-width;
+    padding: 15px;
+    box-sizing:border-box;
+    margin: 0 auto;
+}
+table {
+    margin: 10px 0;
+    background: @white;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+
+    * {
+        font-size: 12px;
+    }
+    td, th {
+        border: 1px solid @gray-lighter;
+        padding: 10px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .confirm {
+        background: @red;
+    }
+}
+.well {
+    padding: 15px;
+    border-radius: 3px;
+    background: @white;
+    box-shadow: 0 0 4px @gray-light inset;
+    border: 1px solid @gray-lighter;
+}
+
+.button {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    color: #232323;
+    outline: none;
+    border: 2px solid #232323;
+    background-color: white;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    line-height: 18px;
+    padding: 14px 15px;
+    min-width: 225px;
+
+    &:before {
+        background: #232323;
+        position: absolute;
+        display: block;
+        content: '';
+        width: 100%;
+        left: 0;
+        z-index: -1;
+        bottom: -6px;
+        height: 6px;
+        -moz-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        -moz-transform: scaleX(0.98);
+        -ms-transform: scaleX(0.98);
+        -webkit-transform: scaleX(0.98);
+        transform: scaleX(0.98);
+        -moz-border-radius: 0 0 15px 15px;
+        -webkit-border-radius: 0 15px 15px;
+        border-radius: 0 0 15px 15px;
+    }
+    &.gold {
+        color: #232323;
+        background: #f2c40f;
+        border-color: transparent;
+
+        &:before {
+            background: #917609;
+        }
+    }
+    &:disabled {
+        opacity: .7;
+        cursor: not-allowed;
+    }
+}

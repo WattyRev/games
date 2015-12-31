@@ -1,0 +1,27 @@
+{
+  "name": "CardsAgainstHumanity",
+  "version": "1.0.0",
+  "description": "Cards Against Humanity game",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "connect-livereload": "^0.5.3",
+    "connect-modrewrite": "^0.8.2",
+    "grunt": "~0.4.5",
+    "grunt-connect-rewrite": "^0.2.1",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-connect": "^0.11.2",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-less": "^1.0.1",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "^0.10.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-injector": "^0.6.0"
+  }
+}

@@ -1,0 +1,15 @@
+<div class="container text-center">
+    <div ng-hide="showJoin">
+        <button class="button" ng-click="newGame()">New Game</button>
+        <button class="button" ng-click="showJoin = true;">Join Game</button>
+    </div>
+
+    <div class="join-game" ng-show="showJoin">
+        <div class="form-group">
+            <input type="text" placeholder="Game ID" class="text-center" ng-model="joinId">
+        </div>
+        <br/>
+        <button class="button" ng-click="showJoin = false;">Cancel</button>
+        <button class="button gold" ng-disabled="invalidId()" ng-click="joinGame(joinId)">Join</button>
+    </div>
+</div>
