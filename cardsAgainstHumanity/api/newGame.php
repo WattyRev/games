@@ -32,7 +32,9 @@ function create($data) {
         echo $newId;
         return;
     } else {
-        create($data);
+        echo 'fail';
+        return;
+        //create($data);
     }
 }
 create($data);
