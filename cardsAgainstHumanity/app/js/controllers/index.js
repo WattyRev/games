@@ -1,9 +1,11 @@
-app.controller('indexCtrl', ['$scope', '$rootScope', '$state', 'sessionService', function($scope, $root, $state, $session) {
-    console.log('index', $session);
+app.controller('indexCtrl', ['$scope', '$rootScope', '$state', 'gameService', function($scope, $root, $state, $game) {
+    console.log('index', $game);
     // Functions
         $scope.newGame = function() {
             var id = util.makeId();
-            $state.go('lobby', {sessionId: id});
+            $game.newGame().then(function(response) {
+                $state.go('lobby', {sessionId: response.data});
+            });
         };
 
         $scope.joinGame = function(id) {
