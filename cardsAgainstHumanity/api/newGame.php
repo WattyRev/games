@@ -14,7 +14,7 @@ $newId = uniqid();
 $data = new SSEData('file',array('path'=>'./data'));
 function create($data) {
     $newId = uniqid();
-    $existing = $data->get($newId);
+    $existing = $data->get($newId).length === 0;
     var_dump($existing);
     // if (!isset($existing) {
     //     setcookie('currentGame', $newId, time()+60*60*24);
