@@ -10,7 +10,7 @@ if (!isset($_GET['host']) || !isset($_GET['nickname'])) {
     return;
 }
 
-$newId = uniqid();
+$newId = 'test';//uniqid();
 $data = new SSEData('file',array('path'=>'./data'));
 function create() {
     $newId = uniqid();
@@ -19,13 +19,13 @@ function create() {
         $data->set($newId,json_encode(
             array(
                 'players'=>array(),
-                'host'=>$_GET['host'],
-                'deck'=>file_get_contents('cards.json'),
-                'discarded'=>array(),
-                'id'=>$newId,
-                'nickname'=>$_GET['nickname'],
-                'started'=>false,
-                'log'=>array(),
+                // 'host'=>$_GET['host'],
+                // 'deck'=>file_get_contents('cards.json'),
+                // 'discarded'=>array(),
+                // 'id'=>$newId,
+                // 'nickname'=>$_GET['nickname'],
+                // 'started'=>false,
+                // 'log'=>array(),
                 'updated'=>time()
             )
         ));
