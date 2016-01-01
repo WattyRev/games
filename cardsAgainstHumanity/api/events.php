@@ -14,10 +14,7 @@ class CurrentGame extends SSEEvent {
 		return $this->data->msg;
 	}
 	public function check(){
-		if (!isset($_SESSION['currentGame'])) {
-			return false;
-		}
-		$this->data = json_decode($GLOBALS['data']->get($_SESSION['currentGame']));
+		$this->data = json_decode($GLOBALS['data']->get('currentGame'));
 		if($this->data->updated !== $this->cache){
 			$this->cache = $this->data->updated;
 			return true;
