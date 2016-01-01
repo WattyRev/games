@@ -18,7 +18,7 @@ function create($data) {
         array(
             'players'=>array(),
             'host'=>$_GET['host'],
-            'deck'=>file_get_contents('cards.json'),
+            'deck'=>json_decode(file_get_contents('cards.json')),
             'discarded'=>array(),
             'id'=>$newId,
             'nickname'=>$_GET['nickname'],
