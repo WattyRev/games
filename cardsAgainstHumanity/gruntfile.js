@@ -5,9 +5,9 @@ var js = [
     'app/js/vendor/**.js',
     'app/js/util.js',
     'app/js/app.js',
+    'app/js/services/**.js',
     'app/js/controllers/**.js',
     'app/js/directives/**.js',
-    'app/js/services/**.js',
 ];
 var jsProd = [
     'app/js/app.min.js',

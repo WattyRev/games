@@ -1,5 +1,5 @@
-app.controller('indexCtrl', ['$scope', '$rootScope', '$state', function($scope, $root, $state) {
-
+app.controller('indexCtrl', ['$scope', '$rootScope', '$state', 'sessionService', function($scope, $root, $state, $session) {
+    console.log('index', $session);
     // Functions
         $scope.newGame = function() {
             var id = util.makeId();

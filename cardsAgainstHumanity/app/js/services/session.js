@@ -1,17 +1,17 @@
-app.service('sessionService', ['$scope', '$rootScope', function($scope, $root) {
-        return {
-            // Variables
-                model: {},
-                
-            // Functions
-                newSession: function() {
+app.service('sessionService', ['sse', function($sse) {
+    return {
+        // Variables
+            model: {},
 
-                },
-                getSession: function(id) {
+        // Functions
+            newSession: function() {
 
-                },
-                getRole: function() {
+            },
+            getSession: function(id) {
 
-                }
-        };
+            },
+            getRole: function() {
+
+            }
+    };
 }]);

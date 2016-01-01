@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 require_once('../../src/libsse.php');
 
 $GLOBALS['data'] = new SSEData('file',array('path'=>'./data'));
