@@ -32,6 +32,7 @@ function create($data) {
             )
         ));
         echo $newId;
+        echo $_SESSION['currentGame'];
         return;
     } else {
         create($data);
