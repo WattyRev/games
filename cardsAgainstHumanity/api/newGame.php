@@ -35,5 +35,5 @@ function create() {
         create();
     }
 }
-
-echo 'test';
+create();
+//echo 'test';
