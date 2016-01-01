@@ -4,7 +4,7 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 header("Access-Control-Allow-Methods: PUT");
 require_once('src/libsse.php');
 
-if (!isset($_POST['host']) || !isset($_POST['nickname'])) {
+if (!isset($_GET['host']) || !isset($_GET['nickname'])) {
     http_response_code(400);
     echo 'Host and nickname are required';
     return;
@@ -19,11 +19,11 @@ $data = new SSEData('file',array('path'=>'./data'));
 //         setcookie('currentGame', $newId, mktime(). time()+60*60*24);
 //         $data->set($newId,json_encode(array(
 //             'players'=>array(),
-//             'host'=>$_POST['host'],
+//             'host'=>$_GET['host'],
 //             'deck'=>file_get_contents('cards.json'),
 //             'discarded'=>array(),
 //             'id'=>$newId,
-//             'nickname'=>$_POST['nickname'],
+//             'nickname'=>$_GET['nickname'],
 //             'started'=>false,
 //             'log'=>array(),
 //             'updated'=>time()

@@ -10,10 +10,12 @@ app.service('api', ['$http', '$rootScope', function($http, $root) {
             return _put('/update', $session.model, {});
         },
         createGame: function() {
-            return _put('/newGame', {
-                host: $root.userId,
-                nickname: 'New Game'
-            }, {});
+            return _put('/newGame', null, {
+                params: {
+                    host: $root.userId,
+                    nickname: 'New Game'
+                }
+            });
         }
     };
 }]);
