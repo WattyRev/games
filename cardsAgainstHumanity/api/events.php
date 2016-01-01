@@ -11,7 +11,7 @@ class CurrentGame extends SSEEvent {
 	private $cache = 0;
 	private $data;
 	public function update(){
-		return $this->data;
+		return $GLOBALS['data']->get('currentGame');
 	}
 	public function check(){
 		$this->data = json_decode($GLOBALS['data']->get('currentGame'));
