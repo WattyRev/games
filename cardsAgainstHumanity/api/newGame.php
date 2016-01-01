@@ -13,7 +13,7 @@ if (!isset($_GET['host']) || !isset($_GET['nickname'])) {
 
 $data = new SSEData('file',array('path'=>'./data'));
 function create($data) {
-    $newId = 'test'; //uniqid();
+    $newId = uniqid();
     if (strlen($data->get($newId) < 1)) {
         $data->set($newId,json_encode(
             array(

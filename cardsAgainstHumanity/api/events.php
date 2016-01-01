@@ -13,7 +13,7 @@ if (isset($_GET['id'])) {
 		private $cache = 0;
 		private $data;
 		public function update(){
-			return $GLOBALS['data']->get($id);
+			return new SSEData('file',array('path'=>'./data'))->get($id);
 		}
 		public function check(){
 			$this->data = json_decode($GLOBALS['data']->get($id));
@@ -26,6 +26,6 @@ if (isset($_GET['id'])) {
 	};
 
 	$sse->exec_limit = 30;
-	$sse->addEventListener('gameUpdate',new CurrentGame());
+	$sse->addEventListener('gameUpdate', new CurrentGame());
 	$sse->start();
 }
