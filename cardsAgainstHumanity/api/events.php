@@ -1,7 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 header('Content-Type: text/event-stream');
-
+session_start();
 require_once('src/libsse.php');
 
 $GLOBALS['data'] = new SSEData('file',array('path'=>'./data'));
@@ -14,10 +14,10 @@ class CurrentGame extends SSEEvent {
 		return $this->data->msg;
 	}
 	public function check(){
-		if (!isset($_COOKIE['currentGame'])) {
+		if (!isset($_SESSION['currentGame'])) {
 			return false;
 		}
-		$this->data = json_decode($GLOBALS['data']->get($_COOKIE['currentGame']));
+		$this->data = json_decode($GLOBALS['data']->get($_SESSION['currentGame']));
 		if($this->data->updated !== $this->cache){
 			$this->cache = $this->data->updated;
 			return true;

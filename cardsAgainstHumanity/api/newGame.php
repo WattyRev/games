@@ -2,6 +2,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Key");
 header("Access-Control-Allow-Methods: PUT");
+session_start();
 require_once('src/libsse.php');
 
 if (!isset($_GET['host']) || !isset($_GET['nickname'])) {
@@ -16,7 +17,7 @@ function create($data) {
     $newId = uniqid();
     $exists = strlen($data->get($newId)) > 0;
     if (!$exists) {
-        setcookie("currentGame",$newId);
+        $_SESSION['currentGame'] = $newId;
         $data->set($newId,json_encode(
             array(
                 'players'=>array(),
@@ -31,7 +32,6 @@ function create($data) {
             )
         ));
         echo $newId;
-        echo $_COOKIE['currentGame'];
         return;
     } else {
         create($data);
