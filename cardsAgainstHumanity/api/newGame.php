@@ -11,10 +11,9 @@ if (!isset($_GET['host']) || !isset($_GET['nickname'])) {
     return;
 }
 
-$newId = 'currentGame';
 $data = new SSEData('file',array('path'=>'./data'));
 function create($data) {
-    $newId = uniqid();
+    $newId = 'currentGame';
     $exists = strlen($data->get($newId)) > 0;
     if (!$exists) {
         $data->set($newId,json_encode(
