@@ -12,7 +12,7 @@ app.service('sse', ['$rootScope', function($root) {
 
             data.addEventListener('gameUpdate',function(e){
                 $root.$broadcast('update', e);
-                console.log('update', JSON.parse(e.data));
+                console.log('updated', e);
             }, false);
         }
     };
