@@ -15,7 +15,7 @@ class CurrentGame extends SSEEvent {
 	}
 	public function check(){
 		if (!isset($_COOKIE['currentGame'])) {
-			return true;
+			return false;
 		}
 		$this->data = json_decode($GLOBALS['data']->get($_COOKIE['currentGame']));
 		if($this->data->updated !== $this->cache){
