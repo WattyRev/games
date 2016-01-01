@@ -17,7 +17,7 @@ function create() {
     //echo 'test';
     $newId = uniqid();
     // if (!empty(json_decode($data->get($newId))) {
-        setcookie('currentGame', $newId, mktime(). time()+60*60*24);
+        setcookie('currentGame', $newId, time()+60*60*24);
         $data->set($newId,json_encode(array(
             'players'=>array(),
             'host'=>$_GET['host'],
