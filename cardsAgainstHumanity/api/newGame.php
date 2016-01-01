@@ -11,7 +11,7 @@ if (!isset($_GET['host']) || !isset($_GET['nickname'])) {
 }
 
 $newId = uniqid();
-$data = new SSEData('file',array('path'=>'data'));
+$data = new SSEData('file',array('path'=>'./data'));
 
 function create() {
     //echo 'test';
