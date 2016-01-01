@@ -13,7 +13,7 @@ if (isset($_GET['id'])) {
 		private $cache = 0;
 		private $data;
 		public function update(){
-			return $GLOBALS['data']->get($id);
+			return $id;
 		}
 		public function check(){
 			$this->data = json_decode($GLOBALS['data']->get($id));
