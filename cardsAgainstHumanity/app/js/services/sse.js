@@ -1,9 +1,19 @@
 app.service('sse', ['$rootScope', function($root) {
-    console.log('sse');
-    var data = new EventSource('http://games.wattydev.com/cardsAgainstHumanity/api/events.php');
+    // var data = new EventSource('http://games.wattydev.com/cardsAgainstHumanity/api/events.php');
+    //
+    // data.addEventListener('gameUpdate',function(e){
+    //     $root.$broadcast('update', e);
+    //     console.log('update', JSON.parse(e.data));
+    // }, false);
 
-    data.addEventListener('gameUpdate',function(e){
-        $root.$broadcast('update', e);
-        console.log('update', JSON.parse(e.data));
-    }, false);
+    return {
+        openStream: function(id) {
+            var data = new EventSource('http://games.wattydev.com/cardsAgainstHumanity/api/events.php?id=' + id);
+
+            data.addEventListener('gameUpdate',function(e){
+                $root.$broadcast('update', e);
+                console.log('update', JSON.parse(e.data));
+            }, false);
+        }
+    };
 }]);

@@ -1,4 +1,6 @@
-app.controller('lobbyCtrl', ['$scope', 'gameService', '$state', function($scope, $game, $state) {
+app.controller('lobbyCtrl', ['$scope', 'sse', '$state', function($scope, $sse, $state) {
     // Variables
         $scope.sessionId = $state.params.sessionId;
+
+        $sse.openStream($scope.sessionId);
 }]);
