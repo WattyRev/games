@@ -2,7 +2,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Key");
 header("Access-Control-Allow-Methods: PUT");
-require_once('../../src/libsse.php');
+require_once('src/libsse.php');
 
 $data = new SSEData('file',array('path'=>'./data'));
 
