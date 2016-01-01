@@ -31,7 +31,7 @@ function create($data) {
             )
         ));
         echo $newId;
-        var_dump($_COOKIE['currentGame']);
+        echo $_COOKIE['currentGame'];
         return;
     } else {
         create($data);
