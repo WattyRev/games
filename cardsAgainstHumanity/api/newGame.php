@@ -16,7 +16,7 @@ function create($data) {
     $newId = uniqid();
     $exists = strlen($data->get($newId)) > 0;
     if (!$exists) {
-        setcookie('currentGame', $newId, time()+60*60*24);
+        setcookie("currentGame",$newId);
         $data->set($newId,json_encode(
             array(
                 'players'=>array(),
