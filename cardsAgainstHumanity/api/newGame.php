@@ -12,7 +12,6 @@ if (!isset($_GET['host']) || !isset($_GET['nickname'])) {
 
 $newId = uniqid();
 $data = new SSEData('file',array('path'=>'./data'));
-var_dump($data);
 function create() {
     $newId = uniqid();
     // if (!empty(json_decode($data->get($newId))) {
@@ -38,4 +37,3 @@ function create() {
     // }
 }
 create();
-echo 'test';
