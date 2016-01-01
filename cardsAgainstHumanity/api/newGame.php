@@ -10,31 +10,29 @@ if (!isset($_GET['host']) || !isset($_GET['nickname'])) {
     return;
 }
 
-$newId = 'test';//uniqid();
+$newId = uniqid();
 $data = new SSEData('file',array('path'=>'./data'));
-function create() {
+function create($data) {
     $newId = uniqid();
     // if (!empty(json_decode($data->get($newId))) {
         setcookie('currentGame', $newId, time()+60*60*24);
-        var_dump($data);
-        // $data->set('test',json_encode(
-        //     array(
-        //         'players'=>array(),
-        //         // 'host'=>$_GET['host'],
-        //         // 'deck'=>file_get_contents('cards.json'),
-        //         // 'discarded'=>array(),
-        //         // 'id'=>$newId,
-        //         // 'nickname'=>$_GET['nickname'],
-        //         // 'started'=>false,
-        //         // 'log'=>array(),
-        //         'updated'=>time()
-        //     )
-        // ));
-        // http_response_code(200);
+        $data->set($newId,json_encode(
+            array(
+                'players'=>array(),
+                'host'=>$_GET['host'],
+                'deck'=>file_get_contents('cards.json'),
+                'discarded'=>array(),
+                'id'=>$newId,
+                'nickname'=>$_GET['nickname'],
+                'started'=>false,
+                'log'=>array(),
+                'updated'=>time()
+            )
+        ));
         echo $newId;
         return;
     // } else {
-    //     create();
+    //     create($data);
     // }
 }
-create();
+create($data);
