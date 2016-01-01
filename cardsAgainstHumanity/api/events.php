@@ -1,5 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
+header('Content-Type: text/event-stream');
+
 require_once('../../src/libsse.php');
 
 $GLOBALS['data'] = new SSEData('file',array('path'=>'./data'));
