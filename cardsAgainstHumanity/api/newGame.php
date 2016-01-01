@@ -31,8 +31,8 @@ function create($data) {
         ));
         echo $newId;
         return;
-    // } else {
-    //     create($data);
+    } else {
+        create($data);
     }
 }
 create($data);
