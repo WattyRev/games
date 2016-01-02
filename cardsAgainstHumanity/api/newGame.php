@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Key");
 header("Access-Control-Allow-Methods: PUT");
 session_start();
-require_once('src/libsse.php');
+require_once('./src/libsse.php');
 
 if (!isset($_GET['host']) || !isset($_GET['nickname'])) {
     http_response_code(400);
@@ -13,7 +13,7 @@ if (!isset($_GET['host']) || !isset($_GET['nickname'])) {
 
 $data = new SSEData('file',array('path'=>'./data'));
 function create($data) {
-    $newId = 'test'; //uniqid();
+    $newId = uniqid();
     if (strlen($data->get($newId) < 1)) {
         $data->set($newId,json_encode(
             array(
