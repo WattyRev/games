@@ -1,6 +1,24 @@
-app.controller('lobbyCtrl', ['$scope', 'sse', '$state', function($scope, $sse, $state) {
+app.controller('lobbyCtrl', ['$scope', '$state', 'gameService', '$rootScope', function($scope, $state, $game, $root) {
     // Variables
-        $scope.sessionId = $state.params.sessionId;
+        $scope.game = $game.data;
 
-        $sse.openStream($scope.sessionId);
+    // Functions
+        function getData() {
+            $scope.game = $game.data;
+            $scope.$apply();
+        }
+        function init() {
+            var functions = [
+                function() {
+                    $game.connect($state.params.sessionId);
+                }
+            ];
+            functions.forEach(function(fn) {
+                fn();
+            });
+        }
+        init();
+
+    // Listeners
+        $root.$on('gameUpdate', getData);
 }]);

@@ -3,8 +3,8 @@ app.controller('indexCtrl', ['$scope', '$rootScope', '$state', 'gameService', fu
     // Functions
         $scope.newGame = function() {
             var id = util.makeId();
-            $game.newGame().then(function(response) {
-                $state.go('lobby', {sessionId: response.data});
+            $game.newGame().then(function(id) {
+                $state.go('lobby', {sessionId: id});
             });
         };
 

@@ -24,7 +24,13 @@ function create($data) {
                 'id'=>$newId,
                 'nickname'=>$_GET['nickname'],
                 'started'=>false,
-                'log'=>array(),
+                'log'=>array(
+                    array(
+                        'message'=>'New game "' . $_GET['nickname'] . '" created.',
+                        'time'=>time(),
+                        'from'=>'system'
+                    )
+                ),
                 'updated'=>time()
             )
         ));

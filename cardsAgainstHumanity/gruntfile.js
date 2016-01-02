@@ -5,6 +5,7 @@ var js = [
     'app/js/vendor/**.js',
     'app/js/util.js',
     'app/js/app.js',
+    'app/js/models/**.js',
     'app/js/services/**.js',
     'app/js/controllers/**.js',
     'app/js/directives/**.js',
