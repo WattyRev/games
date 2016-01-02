@@ -5,7 +5,6 @@ session_start();
 require_once('src/libsse.php');
 
 if (isset($_GET['id'])) {
-	$id = $_GET['id'];
 	$GLOBALS['data'] = new SSEData('file',array('path'=>'./data'));
 	$sse = new SSE();
 
@@ -13,10 +12,10 @@ if (isset($_GET['id'])) {
 		private $cache = 0;
 		private $data;
 		public function update(){
-			return $id;
+			return $GLOBALS['data']->get($_GET['id']);
 		}
 		public function check(){
-			$this->data = json_decode($GLOBALS['data']->get($id));
+			$this->data = json_decode($GLOBALS['data']->get($_GET['id']));
 			if($this->data->updated !== $this->cache){
 				$this->cache = $this->data->updated;
 				return true;
