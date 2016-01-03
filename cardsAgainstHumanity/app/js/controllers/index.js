@@ -14,7 +14,7 @@ app.controller('indexCtrl', ['$scope', '$rootScope', '$state', 'gameService', fu
         $scope.joinGame = function(id) {
             $game.joinGame(
                 id,
-                'user-' + util.makeId(),
+                'user-' + localStorage.userId,
                 localStorage.userId
             ).then(function() {
                 $state.go('lobby', {sessionId: id});

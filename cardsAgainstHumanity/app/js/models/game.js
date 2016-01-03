@@ -12,7 +12,7 @@ var Game = function(data) {
             hours = hours - 12;
             a = 'PM';
         }
-        var minutes = time.getMinutes();
+        var minutes = time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes();
         value.time = hours + ':' + minutes + a;
         return value;
     });

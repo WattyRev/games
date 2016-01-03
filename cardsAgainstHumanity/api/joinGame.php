@@ -30,7 +30,7 @@ array_push($game->players, array(
 array_push($game->log, array(
     'message'=>'User "' . $_GET['username'] . '" joined the game.',
     'time'=>time(),
-    'from'=>$_GET['userid']
+    'from'=>'system'
 ));
 
 $data->set($_GET['id'],json_encode($game));
