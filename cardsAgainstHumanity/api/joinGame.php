@@ -11,7 +11,7 @@ if (!isset($_POST['id']) || !isset($_POST['user'])) {
 }
 
 $data = new SSEData('file',array('path'=>'./data'));
-$game = $data->get($_POST['id'])
+$game = $data->get($_POST['id']);
 
 if (strlen($game) < 1) {
     http_response_code(404);
