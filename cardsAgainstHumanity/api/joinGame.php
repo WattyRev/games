@@ -4,15 +4,15 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 header("Access-Control-Allow-Methods: PUT");
 require_once('./src/libsse.php');
 
-if (!isset($_POST['id']) || !isset($_POST['user'])) {
+if (!isset($_GET['id']) || !isset($_GET['user'])) {
     http_response_code(400);
-    var_dump($_POST);
+    var_dump($_GET);
     echo 'ID and user are required';
     return;
 }
 
 $data = new SSEData('file',array('path'=>'./data'));
-$game = $data->get($_POST['id']);
+$game = $data->get($_GET['id']);
 
 if (strlen($game) < 1) {
     http_response_code(404);
@@ -21,12 +21,12 @@ if (strlen($game) < 1) {
 
 $game = json_decode($game);
 array_push($game->players, array(
-    'id'=>$_POST['user']->id,
-    'name'=>$_POST['user']->name,
+    'id'=>$_GET['user']->id,
+    'name'=>$_GET['user']->name,
     'hand'=>array(),
     'points'=>0,
 ));
 
-$data->set($_POST['id'],json_encode($game));
+$data->set($_GET['id'],json_encode($game));
 
-echo $_POST['id'];
+echo $_GET['id'];
