@@ -16,10 +16,10 @@ app.service('gameService', ['sse', 'api', '$q', '$rootScope', function($sse, $ap
                     });
                 });
             },
-            joinGame: function(id,user) {
+            joinGame: function(id,username,userid) {
                 var self = this;
                 return $q(function(resolve, reject) {
-                    $api.joinGame(id,user).then(function(response) {
+                    $api.joinGame(id,username,userid).then(function(response) {
                         self.connect(id);
                         resolve();
                     });

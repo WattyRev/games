@@ -8,7 +8,6 @@ app.service('api', ['$http', '$rootScope', function($http, $root) {
         return $http.get(base + uri + '.php', {params:params});
     }
     function _post(uri, payload) {
-        console.log('post', uri,payload);
         return $http.get(base + uri + '.php', payload);
     }
 
@@ -24,11 +23,12 @@ app.service('api', ['$http', '$rootScope', function($http, $root) {
                 }
             );
         },
-        joinGame: function(id,user) {
-            return _put('/joinGame', null,
+        joinGame: function(id,username,userid) {
+            return _get('/joinGame',
                 {
                     id: id,
-                    user: user
+                    username: username,
+                    userid: userid
                 }
             );
         }

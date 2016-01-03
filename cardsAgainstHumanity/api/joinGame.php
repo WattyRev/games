@@ -4,10 +4,10 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 header("Access-Control-Allow-Methods: PUT");
 require_once('./src/libsse.php');
 
-if (!isset($_GET['id']) || !isset($_GET['user'])) {
+if (!isset($_GET['id']) || !isset($_GET['userid']) || !isset($_GET['username'])) {
     http_response_code(400);
     var_dump($_GET);
-    echo 'ID and user are required';
+    echo 'ID,userid, and username are required';
     return;
 }
 
@@ -21,10 +21,16 @@ if (strlen($game) < 1) {
 
 $game = json_decode($game);
 array_push($game->players, array(
-    'id'=>$_GET['user']->id,
-    'name'=>$_GET['user']->name,
+    'id'=>$_GET['userid'],
+    'name'=>$_GET['username'],
     'hand'=>array(),
     'points'=>0,
+));
+
+array_push($game->log, array(
+    'message'=>'User "' . $_GET['username'] . '" joined the game.',
+    'time'=>time(),
+    'from'=>$_GET['userid']
 ));
 
 $data->set($_GET['id'],json_encode($game));
