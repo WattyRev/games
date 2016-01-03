@@ -47,7 +47,7 @@ function create($data) {
             'nickname'=>$_GET['nickname'],
             'created'=>time()
         ));
-        $data->set('status',json_encode($status);
+        $data->set('status',json_encode($status));
         echo $newId;
         return;
     } else {
