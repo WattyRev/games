@@ -4,8 +4,7 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 header("Access-Control-Allow-Methods: POST");
 require_once('./src/libsse.php');
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST))
-    $_POST = json_decode(file_get_contents('php://input'), true);
+$_POST = json_decode(file_get_contents('php://input'), true);
 
 if (!isset($_POST['gameId']) || !isset($_POST['userId']) || !isset($_POST['message'])) {
     http_response_code(400);
