@@ -34,23 +34,29 @@ function create($data) {
                 'updated'=>time()
             )
         ));
-        $status = array(
-            'updated'=>time(),
-            'games'=>array()
-        );
-        var_dump(strlen($data->get('status')));
+
         if (strlen($data->get('status')) > 0) {
             echo 'test';
             $status = json_decode($data->get('status'));
             $status->updated = time();
+            array_push($status->games, array(
+                'id'=>$newId,
+                'nickname'=>$_GET['nickname'],
+                'created'=>time()
+            ));
         } else {
+            $status = array(
+                'updated'=>time(),
+                'games'=>array()
+            );
             $status['updated'] = time();
+            array_push($status['games'], array(
+                'id'=>$newId,
+                'nickname'=>$_GET['nickname'],
+                'created'=>time()
+            ));
         }
-        array_push($status['games'], array(
-            'id'=>$newId,
-            'nickname'=>$_GET['nickname'],
-            'created'=>time()
-        ));
+        var_dump($status);
         $data->set('status',json_encode($status));
         echo $newId;
         return;
