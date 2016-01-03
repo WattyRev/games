@@ -42,7 +42,7 @@ function create($data) {
             $status = json_decode($data->get('status'));
         }
         var_dump($status);
-        $status->updated = time();
+        $status['updated'] = time();
         array_push($status->games, array(
             'id'=>$newId,
             'nickname'=>$_GET['nickname'],
