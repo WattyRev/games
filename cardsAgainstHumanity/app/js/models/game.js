@@ -4,6 +4,7 @@ var Game = function(data) {
     $.each(data, function(key, val) {
         self[key] = val;
     });
+    console.log(this);
     this.log = this.log.map(function(value) {
         var time = new Date(value.time*1000);
         var hours = time.getHours();

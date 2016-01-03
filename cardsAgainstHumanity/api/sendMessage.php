@@ -44,6 +44,8 @@ array_push($game->log, array(
     'from'=>$_POST['userId']
 ));
 
-$data->set($_POST['gameId'],json_encode($game));
+var_dump($game);
+
+//$data->set($_POST['gameId'],json_encode($game));
 
 echo $_POST['gameId'];
