@@ -34,13 +34,11 @@ function create($data) {
                 'updated'=>time()
             )
         ));
-        $status = array();
-        if (strlen($data->get('status') < 1)) {
-            $status = array(
-                'updated'=>time(),
-                'games'=>array()
-            );
-        } else {
+        $status = array(
+            'updated'=>time(),
+            'games'=>array()
+        );
+        if (strlen($data->get('status') > 0)) {
             $status = json_decode($data->get('status'));
         }
         $status->updated = time();
