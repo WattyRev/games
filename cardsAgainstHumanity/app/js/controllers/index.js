@@ -2,7 +2,6 @@ app.controller('indexCtrl', ['$scope', '$rootScope', '$state', 'gameService', fu
 
     // Variables
         $scope.games = $game.games;
-        console.log($scope.games);
 
     // Functions
         $scope.newGame = function() {
@@ -13,7 +12,12 @@ app.controller('indexCtrl', ['$scope', '$rootScope', '$state', 'gameService', fu
         };
 
         $scope.joinGame = function(id) {
-            $state.go('lobby', {sessionId: id});
+            $game.joinGame(id,{
+                name: 'user-' + util.makeId,
+                id: localStorage.userId
+            }).then(function() {
+                $state.go('lobby', {sessionId: id});
+            });
         };
 
         $scope.invalidId = function() {

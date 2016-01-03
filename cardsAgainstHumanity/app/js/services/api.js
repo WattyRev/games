@@ -7,6 +7,9 @@ app.service('api', ['$http', '$rootScope', function($http, $root) {
     function _get(uri, params) {
         return $http.get(base + uri + '.php', {params:params});
     }
+    function _post(uri, payload) {
+        return $http.get(base + uri + '.php', payload);
+    }
 
     return {
         update: function() {
@@ -17,6 +20,14 @@ app.service('api', ['$http', '$rootScope', function($http, $root) {
                 {
                     host: $root.userId,
                     nickname: util.makeId()
+                }
+            );
+        },
+        joinGame: function(id,user) {
+            return _post('/joinGame',
+                {
+                    id: id,
+                    user: user
                 }
             );
         }

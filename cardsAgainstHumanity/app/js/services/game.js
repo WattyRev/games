@@ -16,6 +16,15 @@ app.service('gameService', ['sse', 'api', '$q', '$rootScope', function($sse, $ap
                     });
                 });
             },
+            joinGame: function(id,user) {
+                var self = this;
+                return $q(function(resolve, reject) {
+                    $api.joinGame(id,user).then(function(response) {
+                        self.connect(id);
+                        resolve();
+                    });
+                });
+            },
             connect: function(id) {
                 if (!this.data.id) {
                     $sse.openStream(id);
