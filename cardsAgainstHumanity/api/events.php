@@ -12,7 +12,8 @@ if (isset($_GET['id'])) {
 		private $cache = 0;
 		private $data;
 		public function update(){
-			return $GLOBALS['data']->get($_GET['id']);
+			return $_GET['id'];
+			//return $GLOBALS['data']->get($_GET['id']);
 		}
 		public function check(){
 			$this->data = json_decode($GLOBALS['data']->get($_GET['id']));

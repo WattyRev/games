@@ -24,10 +24,11 @@ app.service('gameService', ['sse', 'api', '$q', '$rootScope', function($sse, $ap
 
     // Listeners
         $root.$on('gameUpdate', function(event, message) {
+            console.log('game', message);
             service.data = new Game(message.data);
         });
         $root.$on('statusUpdate', function(event, message) {
-            console.log('status', event, message);
+            console.log('status', message);
         });
 
     return service;
