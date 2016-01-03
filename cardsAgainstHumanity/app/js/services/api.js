@@ -13,7 +13,7 @@ app.service('api', ['$http', '$rootScope', function($http, $root) {
             return _put('/newGame', null,
                 {
                     host: $root.userId,
-                    nickname: 'New Game'
+                    nickname: util.makeId()
                 }
             );
         }

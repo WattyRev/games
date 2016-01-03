@@ -2,7 +2,7 @@
     <div class="text-center">
         <button class="button" ng-click="newGame()">New Game</button>
     </div>
-    <h3>Join a Game</h3>
+    <h3 ng-show="games.length">Join a Game</h3>
     <div class="clearfix">
         <div class="col col-xs-12 col-sm-4 col-md-3" ng-repeat="game in games">
             {{game.nickname}}
