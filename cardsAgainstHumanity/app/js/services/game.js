@@ -34,6 +34,7 @@ app.service('gameService', ['sse', 'api', '$q', '$rootScope', function($sse, $ap
                 });
             },
             connect: function(id) {
+                console.log('connect');
                 if (!this.data.id) {
                     $sse.openStream(id);
                 }

@@ -5,6 +5,7 @@ app.controller('lobbyCtrl', ['$scope', '$state', 'gameService', '$rootScope', fu
     // Functions
         $scope.sendMessage = function(message) {
             $game.sendMessage(message);
+            $scope.chatMessage = '';
         };
         function getData() {
             $scope.game = $game.data;

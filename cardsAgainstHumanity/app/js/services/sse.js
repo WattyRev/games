@@ -1,6 +1,7 @@
 app.service('sse', ['$rootScope', function($root) {
 
     function listen(e) {
+        console.log('I heard something');
         $root.$broadcast(e.type, e);
     }
 

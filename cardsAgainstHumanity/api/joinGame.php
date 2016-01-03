@@ -33,6 +33,8 @@ array_push($game->log, array(
     'from'=>'system'
 ));
 
+$game->updated = time();
+
 $data->set($_GET['id'],json_encode($game));
 
 echo $_GET['id'];

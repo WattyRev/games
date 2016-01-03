@@ -21,7 +21,7 @@
         <ul class="list-group">
             <li ng-repeat="item in game.log">
                 <i ng-if="item.from === 'system'">{{item.message}} <span class="timestamp">{{item.time}}</span></i>
-                <p ng-if="item.from !== 'system'"><strong>{{item.from}}:</strong> {{item.message}} <span class="timestamp">{{item.time}}</span>
+                <span ng-if="item.from !== 'system'"><strong>{{item.from}}:</strong> {{item.message}} <span class="timestamp">{{item.time}}</span></span>
             </li>
         </ul>
         <form ng-submit="sendMessage(chatMessage)" ng-hide="game.amHost()">
