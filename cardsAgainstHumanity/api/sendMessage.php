@@ -22,7 +22,7 @@ if (strlen($game) < 1) {
 
 $userFound = false;
 
-forEach($game->players as $player) {
+foreach($game->players as $player) {
     if ($player->id === $_POST['userId']) {
         $userFound = true;
     }

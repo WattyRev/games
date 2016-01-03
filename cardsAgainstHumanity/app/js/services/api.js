@@ -8,7 +8,7 @@ app.service('api', ['$http', '$rootScope', function($http, $root) {
         return $http.get(base + uri + '.php', {params:params});
     }
     function _post(uri, payload) {
-        return $http.get(base + uri + '.php', payload);
+        return $http.post(base + uri + '.php', payload);
     }
 
     return {
