@@ -36,7 +36,7 @@ foreach($game->players as $player) {
     break;
 }
 
-if (!$userFound) {
+if ($userFound) {
     echo 'User is already in the game';
     return;
 }
