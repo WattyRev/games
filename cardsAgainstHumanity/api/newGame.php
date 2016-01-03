@@ -39,7 +39,7 @@ function create($data) {
             'games'=>array()
         );
         var_dump(strlen($data->get('status')));
-        if (strlen($data->get('status') > 0)) {
+        if (strlen($data->get('status')) > 0) {
             echo 'test';
             $status = json_decode($data->get('status'));
         }
