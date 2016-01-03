@@ -38,10 +38,10 @@ function create($data) {
             'updated'=>time(),
             'games'=>array()
         );
+        var_dump($data->get('status'));
         if (strlen($data->get('status') > 0)) {
             $status = json_decode($data->get('status'));
         }
-        var_dump($status);
         $status['updated'] = time();
         array_push($status['games'], array(
             'id'=>$newId,
