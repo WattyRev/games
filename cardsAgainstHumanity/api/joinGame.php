@@ -4,7 +4,7 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 header("Access-Control-Allow-Methods: PUT");
 require_once('./src/libsse.php');
 
-if (!isset($_POST['id'] || !isset($_POST['user']))) {
+if (!isset($_POST['id']) || !isset($_POST['user'])) {
     http_response_code(400);
     echo 'ID and user are required';
     return;
