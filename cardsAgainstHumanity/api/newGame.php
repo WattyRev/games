@@ -34,7 +34,7 @@ function create($data) {
                 'updated'=>time()
             )
         ));
-        $status;
+        $status = array();
         if (strlen($data->get('status') < 1)) {
             $status = array(
                 'updated'=>time(),
