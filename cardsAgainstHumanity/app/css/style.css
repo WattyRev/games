@@ -1,4 +1,14 @@
-* {
+p,
+span,
+div,
+i,
+input,
+h1,
+h2,
+h3,
+h4,
+a,
+strong {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 18px;
   color: #232323;
@@ -76,6 +86,20 @@ small > * {
   box-sizing: border-box;
   margin: 0 auto;
 }
+.bg-dark {
+  background: #232323;
+  color: #ffffff;
+}
+.bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark h4,
+.bg-dark p,
+.bg-dark a,
+.bg-dark button,
+.bg-dark div {
+  color: #ffffff;
+}
 table {
   margin: 10px 0;
   background: #ffffff;
@@ -129,7 +153,6 @@ table .confirm {
   content: '';
   width: 100%;
   left: 0;
-  z-index: -1;
   bottom: -6px;
   height: 6px;
   -moz-transform-origin: 50% 50%;
@@ -155,6 +178,14 @@ table .confirm {
 .button:disabled {
   opacity: .7;
   cursor: not-allowed;
+}
+.button.dark {
+  color: #ffffff;
+  background: #232323;
+  border: 2px solid #ffffff;
+}
+.button.dark:before {
+  background: #eeeeee;
 }
 .unstyled {
   margin: 0;
@@ -430,4 +461,24 @@ table .confirm {
   .col-xl-1 {
     width: 8.33333333%;
   }
+}
+.header {
+  background: #232323;
+  color: #ffffff;
+  height: 45px;
+  padding: 0 15px;
+}
+.header h2 {
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 45px;
+}
+.section {
+  height: 50vh;
+}
+.container {
+  height: 100%;
+}
+[fill-remaining-space] {
+  overflow: auto;
 }

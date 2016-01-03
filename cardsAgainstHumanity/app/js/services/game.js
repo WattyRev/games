@@ -34,7 +34,6 @@ app.service('gameService', ['sse', 'api', '$q', '$rootScope', function($sse, $ap
                 });
             },
             connect: function(id) {
-                console.log('connect');
                 if (!this.data.id) {
                     $sse.openStream(id);
                 }
@@ -46,7 +45,6 @@ app.service('gameService', ['sse', 'api', '$q', '$rootScope', function($sse, $ap
             service.data = new Game(message.data);
         });
         $root.$on('statusUpdate', function(event, message) {
-            console.log('status', message);
             service.games = JSON.parse(message.data).games;
         });
 

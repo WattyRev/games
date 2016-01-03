@@ -1,12 +1,28 @@
-<div class="container">
-    <div class="text-center">
-        <button class="button" ng-click="newGame()">New Game</button>
+<div class="section">
+    <div class="header">
+        <h2>Cards Against Humanity</h2>
     </div>
-    <h3 ng-show="games.length">Join a Game</h3>
-    <div class="clearfix">
-        <div class="col col-xs-12 col-sm-4 col-md-3" ng-repeat="game in games" ng-click="joinGame(game.id)">
-            {{game.nickname}}
-            <small>{{game.id}}</small>
+    <div class="container">
+        <div class="hidden-sm hidden-xs">
+            <h1>What is Cards Against Humanity?</h1>
+
+            <p>Cards Against Humanity is a party game for horrible people. Unlike most of the party games you've played before, Cards Against Humanity is as despicable and awkward as you and your friends.</p>
+
+            <p>The game is simple. Each round, one player asks a question from a black card, and everyone else answers with their funniest white card. Click the button below to start a new game!</p>
+        </div>
+        <h1>Start a Game</h1>
+        <div class="text-center">
+            <button class="button" ng-click="newGame()">New Game</button>
+        </div>
+    </div>
+</div>
+<div class="section bg-dark" ng-show="games.length">
+    <div class="container">
+        <h1>Join a Game</h1>
+        <div class="clearfix" fill-remaining-space>
+            <div class="col col-xs-12 col-sm-4 text-center" ng-repeat="game in games">
+                <button class="button dark" ng-click="joinGame(game.id)">{{game.nickname}}</button>
+            </div>
         </div>
     </div>
 </div>

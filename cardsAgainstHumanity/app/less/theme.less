@@ -1,5 +1,5 @@
 //General
-* {
+p, span, div, i, input,h1,h2,h3,h4,a,strong {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 18px;
     color: @gray-darkest;
@@ -72,6 +72,13 @@ small {
     box-sizing:border-box;
     margin: 0 auto;
 }
+.bg-dark {
+    background: @gray-darkest;
+    color: @white;
+    h1,h2,h3,h4,p,a,button,div {
+        color: @white;
+    }
+}
 table {
     margin: 10px 0;
     background: @white;
@@ -107,9 +114,9 @@ table {
     text-decoration: none;
     text-align: center;
     font-weight: bold;
-    color: #232323;
+    color: @gray-darkest;
     outline: none;
-    border: 2px solid #232323;
+    border: 2px solid @gray-darkest;
     background-color: white;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -120,13 +127,12 @@ table {
     min-width: 225px;
 
     &:before {
-        background: #232323;
+        background: @gray-darkest;
         position: absolute;
         display: block;
         content: '';
         width: 100%;
         left: 0;
-        z-index: -1;
         bottom: -6px;
         height: 6px;
         -moz-transform-origin: 50% 50%;
@@ -142,7 +148,7 @@ table {
         border-radius: 0 0 15px 15px;
     }
     &.gold {
-        color: #232323;
+        color: @gray-darkest;
         background: #f2c40f;
         border-color: transparent;
 
@@ -153,5 +159,14 @@ table {
     &:disabled {
         opacity: .7;
         cursor: not-allowed;
+    }
+    &.dark {
+        color: @white;
+        background: @gray-darkest;
+        border: 2px solid @white;
+
+        &:before {
+            background: @gray-lighter;
+        }
     }
 }
