@@ -6,6 +6,7 @@ require_once('./src/libsse.php');
 
 if (!isset($_POST['id']) || !isset($_POST['user'])) {
     http_response_code(400);
+    var_dump($_POST);
     echo 'ID and user are required';
     return;
 }
