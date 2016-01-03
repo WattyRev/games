@@ -54,7 +54,7 @@ if (isset($_GET['id'])) {
 		}
 	};
 
-	$sse->exec_limit = 30;
+	$sse->exec_limit = 60 * 60;
 	$sse->addEventListener('statusUpdate', new CurrentGames());
 	$sse->start();
 }

@@ -19,7 +19,28 @@ if (strlen($game) < 1) {
     echo 'Could not find game with that ID.';
 }
 
+
 $game = json_decode($game);
+
+if ($game->host === $_GET['userid']) {
+    echo 'User is host';
+    return;
+}
+
+$userFound = false;
+
+foreach($game->players as $player) {
+    if ($player->id === $_GET['userId']) {
+        $userFound = true;
+    }
+    break;
+}
+
+if (!$userFound) {
+    echo 'User is already in the game';
+    return;
+}
+
 array_push($game->players, array(
     'id'=>$_GET['userid'],
     'name'=>$_GET['username'],
@@ -28,7 +49,7 @@ array_push($game->players, array(
 ));
 
 array_push($game->log, array(
-    'message'=>'User "' . $_GET['username'] . '" joined the game.',
+    'message'=>$_GET['username'] . '" joined the game.',
     'time'=>time(),
     'from'=>'system'
 ));
