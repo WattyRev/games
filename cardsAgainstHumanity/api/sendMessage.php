@@ -19,6 +19,7 @@ if (strlen($game) < 1) {
     echo 'Could not find game with that ID.';
     return;
 }
+$game = json_decode($game);
 
 $userFound = false;
 
