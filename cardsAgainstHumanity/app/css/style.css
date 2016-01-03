@@ -468,9 +468,25 @@ table .confirm {
   height: 45px;
   padding: 0 15px;
 }
+.header h1,
+.header h2,
+.header h3,
+.header h4,
+.header span,
+.header div,
+.header p,
+.header a,
+.header ul {
+  display: inline-block;
+  color: #ffffff;
+}
 .header h2 {
   color: #ffffff;
-  font-size: 20px;
+  font-size: 18px;
+  line-height: 45px;
+}
+.header h3 {
+  font-size: 14px;
   line-height: 45px;
 }
 .section {
