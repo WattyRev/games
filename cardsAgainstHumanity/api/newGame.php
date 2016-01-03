@@ -39,8 +39,9 @@ function create($data) {
                 'updated'=>time(),
                 'games'=>array()
             );
+        } else {
+            $status = json_decode($data->get('status'));
         }
-        $status = json_decode($data->get('status'));
         $status->updated = time();
         array_push($status->games, array(
             'id'=>$newId,
