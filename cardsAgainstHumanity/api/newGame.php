@@ -36,7 +36,6 @@ function create($data) {
         ));
 
         if (strlen($data->get('status')) > 0) {
-            echo 'test';
             $status = json_decode($data->get('status'));
             $status->updated = time();
             array_push($status->games, array(
@@ -56,7 +55,6 @@ function create($data) {
                 'created'=>time()
             ));
         }
-        var_dump($status);
         $data->set('status',json_encode($status));
         echo $newId;
         return;
