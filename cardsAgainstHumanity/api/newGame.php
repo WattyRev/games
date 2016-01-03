@@ -42,8 +42,10 @@ function create($data) {
         if (strlen($data->get('status')) > 0) {
             echo 'test';
             $status = json_decode($data->get('status'));
+            $status->updated = time();
+        } else {
+            $status['updated'] = time();
         }
-        $status['updated'] = time();
         array_push($status['games'], array(
             'id'=>$newId,
             'nickname'=>$_GET['nickname'],
