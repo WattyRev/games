@@ -12,7 +12,6 @@ if (isset($_GET['id'])) {
 		private $cache = 0;
 		private $data;
 		public function update(){
-			return $_GET['id'];
 			return $GLOBALS['data']->get($_GET['id']);
 		}
 		public function check(){
