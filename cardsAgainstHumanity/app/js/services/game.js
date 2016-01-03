@@ -2,6 +2,7 @@ app.service('gameService', ['sse', 'api', '$q', '$rootScope', function($sse, $ap
     var service = {
         // Variables
             data: {},
+            games: {},
 
         // Functions
             newGame: function() {
@@ -24,11 +25,11 @@ app.service('gameService', ['sse', 'api', '$q', '$rootScope', function($sse, $ap
 
     // Listeners
         $root.$on('gameUpdate', function(event, message) {
-            console.log('game', message);
             service.data = new Game(message.data);
         });
         $root.$on('statusUpdate', function(event, message) {
             console.log('status', message);
+            service.games = JSON.parse(message.data).games;
         });
 
     return service;

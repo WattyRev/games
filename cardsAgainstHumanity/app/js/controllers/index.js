@@ -1,5 +1,9 @@
 app.controller('indexCtrl', ['$scope', '$rootScope', '$state', 'gameService', function($scope, $root, $state, $game) {
-    console.log('index', $game);
+
+    // Variables
+        $scope.games = $game.games;
+        console.log($scope.games);
+
     // Functions
         $scope.newGame = function() {
             var id = util.makeId();
@@ -15,4 +19,10 @@ app.controller('indexCtrl', ['$scope', '$rootScope', '$state', 'gameService', fu
         $scope.invalidId = function() {
             return !($scope.joinId && $scope.joinId.length === 5);
         };
+
+    // Listeners
+        $root.$on('statusUpdate', function() {
+            $scope.games = $game.games;
+            $scope.$apply();
+        });
 }]);

@@ -1,15 +1,12 @@
-<div class="container text-center">
-    <div ng-hide="showJoin">
+<div class="container">
+    <div class="text-center">
         <button class="button" ng-click="newGame()">New Game</button>
-        <button class="button" ng-click="showJoin = true;">Join Game</button>
     </div>
-
-    <div class="join-game" ng-show="showJoin">
-        <div class="form-group">
-            <input type="text" placeholder="Session ID" class="text-center" ng-model="joinId">
+    <h3>Join a Game</h3>
+    <div class="clearfix">
+        <div class="col col-xs-12 col-sm-4 col-md-3" ng-repeat="game in games">
+            {{game.nickname}}
+            <small>{{game.id}}</small>
         </div>
-        <br/>
-        <button class="button" ng-click="showJoin = false;">Cancel</button>
-        <button class="button gold" ng-disabled="invalidId()" ng-click="joinGame(joinId)">Join</button>
     </div>
 </div>
