@@ -38,7 +38,7 @@ if (isset($_GET['id'])) {
 			return $GLOBALS['data']->get('status');
 		}
 		public function check(){
-			$this->data = json_decode($GLOBALS['data']->get('status');
+			$this->data = json_decode($GLOBALS['data']->get('status'));
 			if($this->data->updated !== $this->cache){
 				$this->cache = $this->data->updated;
 				return true;
