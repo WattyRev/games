@@ -40,6 +40,7 @@ function create($data) {
         );
         var_dump($data->get('status'));
         if (strlen($data->get('status') > 0)) {
+            echo 'test';
             $status = json_decode($data->get('status'));
         }
         $status['updated'] = time();
