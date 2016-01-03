@@ -34,6 +34,14 @@ function create($data) {
                 'updated'=>time()
             )
         ));
+        $status = json_decode($data->get('status'));
+        $status->updated = time();
+        array_push($status->games, array(
+            'id'=>$newId,
+            'nickname'=>$_GET['nickname'],
+            'created'=>time()
+        ));
+        $data->set('status',json_encode($status);
         echo $newId;
         return;
     } else {
