@@ -37,7 +37,7 @@ if (isset($_GET['id'])) {
 		public function update(){
 			$status = $GLOBALS['data']->get('status');
 			if (strlen($status) < 1) {
-				json_encode(array(
+				return json_encode(array(
 					'games'=>array()
 				));
 			} else {
