@@ -462,6 +462,11 @@ table .confirm {
     width: 8.33333333%;
   }
 }
+.center {
+  margin-left: auto!important;
+  margin-right: auto!important;
+  float: none!important;
+}
 .header {
   background: #232323;
   color: #ffffff;
@@ -488,6 +493,33 @@ table .confirm {
 .header h3 {
   font-size: 14px;
   line-height: 45px;
+}
+.list-group {
+  margin: 20px 0;
+  list-style: none;
+  padding: 0;
+}
+.list-group li {
+  padding: 10px;
+  width: 100%;
+  background: #eeeeee;
+  position: relative;
+  box-sizing: border-box;
+  margin-bottom: 3px;
+}
+ol.list-group li {
+  padding-left: 55px;
+}
+ol.list-group li .count {
+  position: absolute;
+  background: #f2c40f;
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-right: 3px solid #ffffff;
 }
 .section {
   height: 50vh;
