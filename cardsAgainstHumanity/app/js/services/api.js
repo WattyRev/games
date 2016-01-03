@@ -31,6 +31,9 @@ app.service('api', ['$http', '$rootScope', function($http, $root) {
                     userid: userid
                 }
             );
+        },
+        sendMessage: function(data) {
+            return _post('/sendMessage',data);
         }
     };
 }]);

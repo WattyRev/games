@@ -1,7 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Key");
-header("Access-Control-Allow-Methods: PUT");
+header("Access-Control-Allow-Methods: GET");
 require_once('./src/libsse.php');
 
 if (!isset($_GET['host']) || !isset($_GET['nickname'])) {

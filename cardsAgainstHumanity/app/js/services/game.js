@@ -25,6 +25,14 @@ app.service('gameService', ['sse', 'api', '$q', '$rootScope', function($sse, $ap
                     });
                 });
             },
+            sendMessage: function(message) {
+                var self = this;
+                $api.sendMessage({
+                    gameId: self.data.id,
+                    userId: localStorage.userId,
+                    message: message
+                });
+            },
             connect: function(id) {
                 if (!this.data.id) {
                     $sse.openStream(id);

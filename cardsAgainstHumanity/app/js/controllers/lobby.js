@@ -3,6 +3,9 @@ app.controller('lobbyCtrl', ['$scope', '$state', 'gameService', '$rootScope', fu
         $scope.game = $game.data;
 
     // Functions
+        $scope.sendMessage = function(message) {
+            $game.sendMessage(message);
+        };
         function getData() {
             $scope.game = $game.data;
             $scope.$apply();
