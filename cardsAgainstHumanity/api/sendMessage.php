@@ -36,8 +36,6 @@ if (!$userFound) {
     return;
 }
 
-$game = json_decode($game);
-
 array_push($game->log, array(
     'message'=>$_POST['message'],
     'time'=>time(),
