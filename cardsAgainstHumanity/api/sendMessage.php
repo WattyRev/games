@@ -23,7 +23,7 @@ $game = json_decode($game);
 
 $userFound = false;
 
-var_dump($game);
+var_dump($game->players);
 foreach($game->players as $player) {
     if ($player->id === $_POST['userId']) {
         $userFound = true;
