@@ -24,6 +24,7 @@ $game = json_decode($game);
 $userFound = false;
 
 foreach($game->players as $player) {
+    var_dump($player);
     if ($player->id === $_POST['userId']) {
         $userFound = true;
     }
