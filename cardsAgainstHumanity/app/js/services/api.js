@@ -15,11 +15,11 @@ app.service('api', ['$http', '$rootScope', function($http, $root) {
         update: function() {
             return _put('/update', $session.model, {});
         },
-        createGame: function() {
+        createGame: function(name) {
             return _get('/newGame',
                 {
                     host: $root.userId,
-                    nickname: util.makeId()
+                    nickname: name || util.makeId()
                 }
             );
         },

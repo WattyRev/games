@@ -2,23 +2,32 @@ app.controller('indexCtrl', ['$scope', '$rootScope', '$state', 'gameService', fu
 
     // Variables
         $scope.games = $game.games;
+        $scope.startingGame = false;
 
     // Functions
         $scope.newGame = function() {
-            var id = util.makeId();
-            $game.newGame().then(function(id) {
-                $state.go('lobby', {sessionId: id});
-            });
+            if ($scope.startingGame) {
+                var id = util.makeId();
+                $game.newGame($scope.gameName).then(function(id) {
+                    $state.go('lobby', {sessionId: id});
+                });
+            } else {
+                $scope.startingGame = true;
+            }
         };
 
         $scope.joinGame = function(id) {
-            $game.joinGame(
-                id,
-                'user-' + localStorage.userId,
-                localStorage.userId
-            ).then(function() {
-                $state.go('lobby', {sessionId: id});
-            });
+            if ($scope.joiningGame) {
+                $game.joinGame(
+                    id,
+                    $scope.userName,
+                    localStorage.userId
+                ).then(function() {
+                    $state.go('lobby', {sessionId: id});
+                });
+            } else {
+                $scope.joiningGame = id;
+            }
         };
 
         $scope.invalidId = function() {

@@ -5,11 +5,11 @@ app.service('gameService', ['sse', 'api', '$q', '$rootScope', function($sse, $ap
             games: {},
 
         // Functions
-            newGame: function() {
+            newGame: function(name) {
                 var self = this;
                 return $q(function(resolve, reject){
                     var id;
-                    $api.createGame().then(function(response) {
+                    $api.createGame(name).then(function(response) {
                         id = response.data;
                         self.connect(id);
                         resolve(id);

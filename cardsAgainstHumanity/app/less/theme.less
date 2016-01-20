@@ -35,7 +35,8 @@ nav {
 input {
     &[type="text"], &[type="email"], &[type="number"], &[type="password"] {
         padding: 10px;
-        border: 1px solid @gray-light;
+        border: 0px;
+        background: @gray-lighter;
     }
 }
 textarea {
@@ -78,6 +79,11 @@ small {
     h1,h2,h3,h4,p,a,button,div {
         color: @white;
     }
+}
+.timestamp {
+    font-size: smaller;
+    font-style: italic;
+    float: right;
 }
 table {
     margin: 10px 0;
@@ -168,5 +174,22 @@ table {
         &:before {
             background: @gray-lighter;
         }
+    }
+}
+
+.input-group {
+    position:relative;
+    margin-bottom: 10px;
+    input {
+        padding-right: 40px;
+        width: 100%;
+    }
+    .button-addon {
+        position:absolute;
+        top: 0;
+        right: 0;
+        padding: 15px;
+        background: @yellow;
+        border: 0;
     }
 }
