@@ -21,18 +21,32 @@ if (strlen($game) < 1) {
 }
 $game = json_decode($game);
 
+// Start Game
 $game->started = true;
-
 $game->startedTime = time();
 
+// Update Log
 array_push($game->log, array(
     'message'=>'Game has started.',
     'time'=>time(),
     'from'=>'system'
 ));
 
+// Shuffle Decks
+$game->blackDeck = shuffle($game->blackDeck);
+$game->whiteDeck = shuffle($game->whiteDeck);
+
+// Deal the cards
+foreach($game->players as $player) {
+    for ($i = 0; $i < 10; $i++) {
+        array_push($player->hand, array_shift($game->whiteDeck));
+    }
+}
+
+// Update updated time
 $game->updated = time();
 
+// Save
 $data->set($_POST['id'],json_encode($game));
 
 echo $_POST['id'];
