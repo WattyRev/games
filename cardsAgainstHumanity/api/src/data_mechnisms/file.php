@@ -13,7 +13,7 @@
 class SSEData_File {
 	private $path; //the path to save the keys as files
 	private $gc_lifetime = 600; //How long should the garbage collector run in seconds
-	
+
 	/*
 	* @method SSEData_File::__construct
 	* @param $args The parameters needed.
@@ -28,7 +28,7 @@ class SSEData_File {
 		else {
 			throw new Exception('Save path must be present.');
 		}
-		
+
 		if(isset($args['gc_lifetime'])){
 			$this->gc_lifetime = $args['gc_lifetime'];
 		}
@@ -71,6 +71,10 @@ class SSEData_File {
 	* @description remove keys that are unused for a specified period
 	*/
 	private function gc(){
+		if($this->gc_lifetime == 0){
+ +			return;
+ +		}
+
 		foreach(glob($this->path.'/sess_*') as $file){
 			if(filemtime($file)+$this->gc_lifetime < time() && file_exists($file)){
 				unlink($file);
