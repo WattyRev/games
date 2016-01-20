@@ -18,8 +18,10 @@ function create($data) {
             array(
                 'players'=>array(),
                 'host'=>$_GET['host'],
-                'deck'=>json_decode(file_get_contents('cards.json')),
-                'discarded'=>array(),
+                'blackDeck'=>json_decode(file_get_contents('cards.json'))->black,
+                'whiteDeck'=>json_decode(file_get_contents('cards.json'))->white,
+                'blackDiscarded'=>array(),
+                'whiteDiscarded'=>array(),
                 'id'=>$newId,
                 'nickname'=>$_GET['nickname'],
                 'started'=>false,
