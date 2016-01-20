@@ -10,7 +10,7 @@ if (!isset($_GET['host']) || !isset($_GET['nickname'])) {
     return;
 }
 
-$data = new SSEData('file', array('path' => './data', 'gc_lifetime' => 0));
+$data = new SSEData('file', array('path' => './data', 'gc_lifetime' => 300));
 function create($data) {
     $newId = uniqid();
     if (strlen($data->get($newId) < 1)) {

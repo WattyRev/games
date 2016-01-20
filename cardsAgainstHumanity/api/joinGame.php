@@ -11,7 +11,7 @@ if (!isset($_GET['id']) || !isset($_GET['userid']) || !isset($_GET['username']))
     return;
 }
 
-$data = new SSEData('file', array('path' => './data', 'gc_lifetime' => 0));
+$data = new SSEData('file', array('path' => './data', 'gc_lifetime' => 300));
 $game = $data->get($_GET['id']);
 
 if (strlen($game) < 1) {
