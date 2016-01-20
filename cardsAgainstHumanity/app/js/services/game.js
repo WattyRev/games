@@ -37,6 +37,9 @@ app.service('gameService', ['sse', 'api', '$q', '$rootScope', function($sse, $ap
                 if (!this.data.id) {
                     $sse.openStream(id);
                 }
+            },
+            startGame: function(id) {
+
             }
     };
 

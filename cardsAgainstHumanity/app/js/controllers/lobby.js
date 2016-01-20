@@ -7,6 +7,11 @@ app.controller('lobbyCtrl', ['$scope', '$state', 'gameService', '$rootScope', fu
             $game.sendMessage(message);
             $scope.chatMessage = '';
         };
+        $scope.startGame = function() {
+            var id = $scope.game.id;
+            $game.startGame(id);
+            $state.go('hosting', {sessionId: id});
+        };
         function getData() {
             $scope.game = $game.data;
             $scope.$apply();

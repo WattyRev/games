@@ -18,6 +18,22 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 			data: {
 				title: 'Lobby'
 			}
+		})
+		.state('hosting', {
+			url: '/:sessionId/hosting',
+			templateUrl: 'html/pages/hosting.html',
+			controller: 'hostingCtrl',
+			data: {
+				title: 'Hosting Game'
+			}
+		})
+		.state('playing', {
+			url: '/:sessionId/playing',
+			templateUrl: 'html/pages/playing.html',
+			controller: 'playingCtrl',
+			data: {
+				title: 'Playing Game'
+			}
 		});
 });
 app.config( ['$httpProvider', function ($httpProvider) {
