@@ -23,6 +23,8 @@ $game = json_decode($game);
 
 $game->started = true;
 
+$game->startedTime = time();
+
 array_push($game->log, array(
     'message'=>'Game has started.',
     'time'=>time(),
