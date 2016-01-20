@@ -32,8 +32,8 @@ $userFound = false;
 foreach($game->players as $player) {
     if ($player->id === $_GET['userId']) {
         $userFound = true;
+        break;
     }
-    break;
 }
 
 if ($userFound) {
