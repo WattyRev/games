@@ -39,7 +39,7 @@ app.service('gameService', ['sse', 'api', '$q', '$rootScope', function($sse, $ap
                 }
             },
             startGame: function(id) {
-
+                $api.startGame(id);
             }
     };
 

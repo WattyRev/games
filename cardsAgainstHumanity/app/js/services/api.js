@@ -34,6 +34,9 @@ app.service('api', ['$http', '$rootScope', function($http, $root) {
         },
         sendMessage: function(data) {
             return _post('/sendMessage',data);
+        },
+        startGame: function(id) {
+            return _post('/startGame',{id:id});
         }
     };
 }]);
