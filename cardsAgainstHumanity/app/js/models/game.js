@@ -1,6 +1,5 @@
 var Game = function(data) {
     data = JSON.parse(data);
-    console.log('game data', data);
     var self = this;
     $.each(data, function(key, val) {
         self[key] = val;
@@ -33,4 +32,14 @@ Game.prototype.findUserById = function(id) {
     return this.players.filter(function(value) {
         return value.id === id;
     })[0];
+};
+
+Game.prototype.getCzar = function() {
+    var filtered = this.players.filter(function(value) {
+        return !!value.isCzar;
+    });
+    if (filtered.length) {
+        return filtered[0];
+    }
+    return null;
 };

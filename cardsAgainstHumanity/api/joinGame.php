@@ -46,6 +46,7 @@ array_push($game->players, array(
     'name'=>$_GET['username'],
     'hand'=>array(),
     'points'=>0,
+    'isCzar'=>false
 ));
 
 array_push($game->log, array(

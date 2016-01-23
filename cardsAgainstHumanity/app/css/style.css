@@ -529,6 +529,9 @@ table .confirm {
   box-sizing: border-box;
   margin-bottom: 3px;
 }
+.list-group li.active {
+  background-color: #5bc0de;
+}
 ol.list-group li {
   padding-left: 55px;
 }

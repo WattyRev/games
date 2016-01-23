@@ -36,13 +36,6 @@ array_push($game->log, array(
 $game->blackDeck = shuffle($game->blackDeck);
 $game->whiteDeck = shuffle($game->whiteDeck);
 
-// Deal the cards
-foreach($game->players as $player) {
-    for ($i = 0; $i < 10; $i++) {
-        array_push($player->hand, array_shift($game->whiteDeck));
-    }
-}
-
 // Update updated time
 $game->updated = time();
 

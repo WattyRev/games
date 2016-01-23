@@ -1,0 +1,28 @@
+<div class="header">
+    <h2>Cards Against Humanity</h2>&nbsp;
+    <h3>Hosting {{game.nickname}}</h3>
+</div>
+<div class="container">
+
+    <div>
+        <h2 class="text-center">Selecting the Czar</h2>
+        <h3 class="text-center">Who has pooped most recently?</h3>
+        <ul class="list-group col col-xs-12 col-sm-10 col-md-8 col-lg-6 center">
+            <li ng-repeat="player in game.players" ng-class="{'active' : vars.lastPooped === player.id}" ng-click="vars.lastPooped = player.id">
+                {{player.name}}
+            </li>
+        </ul>
+        <div class="text-center">
+            <button class="button gold" ng-disabled="!vars.lastPooped" ng-click="setCzar(vars.lastPooped)">Confirm</button>
+        </div>
+    </div>
+
+    <div class="log">
+        <ul class="list-group">
+            <li ng-repeat="item in game.log">
+                <i ng-if="item.from === 'system'">{{item.message}} <span class="timestamp">{{item.time}}</span></i>
+                <span ng-if="item.from !== 'system'"><strong>{{item.user}}:</strong> {{item.message}} <span class="timestamp">{{item.time}}</span></span>
+            </li>
+        </ul>
+    </div>
+</div>
