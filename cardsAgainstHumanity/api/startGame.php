@@ -11,7 +11,7 @@ if (!isset($_POST['id'])) {
     return;
 }
 
-$data = new SSEData('file', array('path' => './data', 'gc_lifetime' => 0));
+$data = new SSEData('file', array('path' => './data', 'gc_lifetime' => 6400));
 $game = $data->get($_POST['id']);
 
 if (strlen($game) < 1) {

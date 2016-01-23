@@ -5,7 +5,7 @@ session_start();
 require_once('src/libsse.php');
 
 if (isset($_GET['id'])) {
-	$GLOBALS['data'] = new SSEData('file',array('path'=>'./data', 'gc_lifetime' => 0));
+	$GLOBALS['data'] = new SSEData('file',array('path'=>'./data', 'gc_lifetime' => 6400));
 	$sse = new SSE();
 
 	class CurrentGame extends SSEEvent {
@@ -28,7 +28,7 @@ if (isset($_GET['id'])) {
 	$sse->addEventListener('gameUpdate', new CurrentGame());
 	$sse->start();
 } else {
-	$GLOBALS['data'] = new SSEData('file',array('path'=>'./data', 'gc_lifetime' => 0));
+	$GLOBALS['data'] = new SSEData('file',array('path'=>'./data', 'gc_lifetime' => 6400));
 	$sse = new SSE();
 
 	class CurrentGames extends SSEEvent {
