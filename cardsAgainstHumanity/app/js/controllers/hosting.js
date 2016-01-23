@@ -1,4 +1,4 @@
-app.controller('hostingCtrl', ['$scope', '$rootScope', 'gameService', '$state', function($scope, $root, $game, $state) {
+app.controller('hostingCtrl', ['$scope', '$rootScope', 'gameService', '$state', 'api', function($scope, $root, $game, $state, $api) {
     // Variables
         $scope.game = $game.data;
         $scope.vars = {
@@ -6,14 +6,13 @@ app.controller('hostingCtrl', ['$scope', '$rootScope', 'gameService', '$state', 
         };
 
     // Functions
-        $scope.setCzar = function(id) {
-            console.log('set czar', id);
+        $scope.nextRound = function(id) {
+            $api.nextRound($scope.game.id, id);
         };
 
         function getData() {
             $scope.game = $game.data;
             $scope.$apply();
-            console.log('hosting', $scope.game);
         }
 
         function init() {

@@ -37,6 +37,15 @@ app.service('api', ['$http', '$rootScope', function($http, $root) {
         },
         startGame: function(id) {
             return _post('/startGame',{id:id});
+        },
+        nextRound: function(gameId, czarId) {
+            var data = {
+                gameId: gameId
+            };
+            if (czarId) {
+                data.czarId = czarId;
+            }
+            return _post('/nextRound', data);
         }
     };
 }]);

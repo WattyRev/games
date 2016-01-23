@@ -90,6 +90,4 @@ function reloadBlackDeck() {
 $game->updated = time();
 
 // Save
-$data->set($_POST['id'],json_encode($game));
-
-echo $_POST['id'];
+$data->set($_POST['gameId'],json_encode($game));
