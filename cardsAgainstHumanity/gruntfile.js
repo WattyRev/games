@@ -1,17 +1,17 @@
 var js = [
-    'js/bower_components/angular/angular.min.js',
-    'js/bower_components/angular-ui-router/release/angular-ui-router.min.js',
-    'js/bower_components/jquery/dist/jquery.min.js',
-    'js/vendor/**.js',
-    'js/util.js',
-    'js/app.js',
-    'js/models/**.js',
-    'js/services/**.js',
-    'js/controllers/**.js',
-    'js/directives/**.js',
+    'app/js/bower_components/angular/angular.min.js',
+    'app/js/bower_components/angular-ui-router/release/angular-ui-router.min.js',
+    'app/js/bower_components/jquery/dist/jquery.min.js',
+    'app/js/vendor/**.js',
+    'app/js/util.js',
+    'app/js/app.js',
+    'app/js/models/**.js',
+    'app/js/services/**.js',
+    'app/js/controllers/**.js',
+    'app/js/directives/**.js',
 ];
 var jsProd = [
-    'js/app.min.js',
+    'app/js/app.min.js',
 ];
 
 
@@ -59,6 +59,10 @@ module.exports = function(grunt) {
       }
     },
     injector: {
+        options: {
+            ignorePath: 'app//',
+            relative: true,
+        },
         dev: {
           files: {
             'app/index.html': js,
