@@ -16,9 +16,9 @@
         <p ng-hide="game.players.length" class="text-center">No players have joined the game yet.</p>
     </div>
     <div class="text-center" ng-show="game.amHost()">
-        <button class="button gold" ng-disabled="game.players.length < 4">Start Game</button>
+        <button class="button gold" ng-disabled="game.players.length < 2" ng-click="startGame()">Start Game</button>
         <br/>
-        <small ng-show="game.players.length < 4">Game requires at least 4 players</small>
+        <small ng-show="game.players.length < 2">Game requires at least 2 players</small>
     </div>
     <div class="log">
         <ul class="list-group">
