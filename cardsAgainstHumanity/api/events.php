@@ -5,7 +5,7 @@ session_start();
 require_once('src/libsse.php');
 
 if (isset($_GET['id'])) {
-	$GLOBALS['data'] = new SSEData('file',array('path'=>'./data', 'gc_lifetime' => 6400));
+	$GLOBALS['data'] = new SSEData('file',array('path'=>'./data', 'gc_lifetime' => 16000));
 	$sse = new SSE();
 
 	class CurrentGame extends SSEEvent {
