@@ -1,0 +1,28 @@
+card >div {
+    width: 255px;
+    height: 355px;
+    border-radius: 15px;
+
+    p {
+        margin: 0;
+        font-size: 24px;
+    }
+    .logo {
+        img {
+            width: 28px;
+            display: inline-block;
+        }
+        p {
+            font-size: 8px;
+            display: inline-block;
+        }
+    }
+
+    &.black {
+        background: @black;
+
+        p {
+            color: @white;
+        }
+    }
+}

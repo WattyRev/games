@@ -550,6 +550,29 @@ ol.list-group li .count {
   line-height: 40px;
   border-right: 3px solid #ffffff;
 }
+card > div {
+  width: 255px;
+  height: 355px;
+  border-radius: 15px;
+}
+card > div p {
+  margin: 0;
+  font-size: 24px;
+}
+card > div .logo img {
+  width: 28px;
+  display: inline-block;
+}
+card > div .logo p {
+  font-size: 8px;
+  display: inline-block;
+}
+card > div.black {
+  background: #000000;
+}
+card > div.black p {
+  color: #ffffff;
+}
 .section {
   height: 50vh;
 }
