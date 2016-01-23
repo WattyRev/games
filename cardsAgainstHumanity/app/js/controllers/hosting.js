@@ -13,6 +13,7 @@ app.controller('hostingCtrl', ['$scope', '$rootScope', 'gameService', '$state', 
         function getData() {
             $scope.game = $game.data;
             $scope.$apply();
+            //console.log('got data', $scope.game);
         }
 
         function init() {

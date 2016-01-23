@@ -1,5 +1,6 @@
 var Game = function(data) {
     data = JSON.parse(data);
+    console.log('game data', data);
     var self = this;
     $.each(data, function(key, val) {
         self[key] = val;

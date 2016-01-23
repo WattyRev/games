@@ -77,12 +77,14 @@ if (count($game->blackDeck) === 0) {
 $game->currentBlack = array_shift($game->blackDeck);
 
 function reloadWhiteDeck() {
-    $game->whiteDeck = shuffle($game->whiteDiscarded);
+    shuffle($game->whiteDiscarded);
+    $game->whiteDeck = $game->whiteDiscarded;
     $game->whiteDiscarded = array();
 }
 
 function reloadBlackDeck() {
-    $game->blackDeck = shuffle($game->blackDiscarded);
+    shuffle($game->blackDiscarded);
+    $game->blackDeck = $game->blackDiscarded;
     $game->blackDiscarded = array();
 }
 

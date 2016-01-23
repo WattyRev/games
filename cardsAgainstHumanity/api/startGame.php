@@ -33,8 +33,8 @@ array_push($game->log, array(
 ));
 
 // Shuffle Decks
-$game->blackDeck = shuffle($game->blackDeck);
-$game->whiteDeck = shuffle($game->whiteDeck);
+shuffle($game->blackDeck);
+shuffle($game->whiteDeck);
 
 // Update updated time
 $game->updated = time();

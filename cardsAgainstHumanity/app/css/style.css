@@ -293,7 +293,7 @@ table .confirm {
   clear: both;
 }
 .col {
-  padding: 15px;
+  padding: 1px 15px;
   float: left;
 }
 .col-xs-12 {
@@ -531,6 +531,10 @@ table .confirm {
 }
 .list-group li.active {
   background-color: #5bc0de;
+}
+.list-group li.list-title {
+  padding: 5px 10px;
+  font-weight: bold;
 }
 ol.list-group li {
   padding-left: 55px;
