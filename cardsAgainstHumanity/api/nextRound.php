@@ -86,6 +86,13 @@ function reloadBlackDeck() {
     $game->blackDiscarded = array();
 }
 
+// Update Log
+array_push($game->log, array(
+    'message'=>$game->players[$nextCzar]->name . ' is now the Czar.',
+    'time'=>time(),
+    'from'=>'system'
+));
+
 // Update updated time
 $game->updated = time();
 
