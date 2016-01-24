@@ -4,7 +4,8 @@ app.controller('playingCtrl', ['$scope', '$rootScope', 'gameService', '$state', 
         $scope.vars = {
             viewing: null,
             selected: [],
-            numToSelect: 1
+            numToSelect: 1,
+            sent: false,
         };
 
     // Functions
@@ -24,13 +25,13 @@ app.controller('playingCtrl', ['$scope', '$rootScope', 'gameService', '$state', 
         $scope.selectViewedCard = function() {
             var viewedIndex;
             var viewed = $scope.me.hand.filter(function(card, index) {
-                if (card.id === $scope.vars.viewing) {
+                if (card.text === $scope.vars.viewing) {
                     viewedIndex = index;
                     return true;
                 }
                 return false;
             });
-            $scope.vars.push(viewed[0]);
+            $scope.vars.selected.push(viewed[0]);
             $scope.me.hand.splice(viewedIndex, 1);
             $scope.vars.viewing = null;
         };
@@ -49,16 +50,23 @@ app.controller('playingCtrl', ['$scope', '$rootScope', 'gameService', '$state', 
         };
 
         $scope.sendCards = function() {
-
+            $api.sendCards($scope.game.id, localStorage.userId, $scope.vars.selected);
+            $scope.vars.selected = [];
+            $scope.vars.sent = true;
         };
 
         function getData() {
-            $scope.game = $game.data;
-            if ($game) {
+            if ($game && (!$scope.game || $game.data.round !== $scope.game.round)) {
+                $scope.game = $game.data;
                 $scope.me = $scope.game.findUserById(localStorage.userId);
+                $scope.vars.sent = false;
+                if ($scope.game.currentBlack.indexOf('(Pick 2)')) {
+                    $scope.vars.numToSelect = 2;
+                } else {
+                    $scope.vars.numToSelect = 1;
+                }
             }
             $scope.$apply();
-            console.log('update', $scope);
         }
 
         function init() {

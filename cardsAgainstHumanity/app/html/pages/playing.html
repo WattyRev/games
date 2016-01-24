@@ -8,10 +8,18 @@
         <card card="game.currentBlack"></card>
     </div>
 
-    <div ng-hide="me.isCzar">
+    <div ng-hide="me.hand.length">
+        <h2 class="text-center">See instructions on host.</h2>
+    </div>
+
+    <div ng-hide="me.isCzar || !me.hand.length">
+        <div ng-show="vars.selected.length">
+            <h2 class="text-center">Selected:</h2>
+            <card ng-repeat="card in vars.selected" card="card" ng-click="cancelSelection(card)"></card>
+        </div>
         <h2 class="text-center">Select a Card</h2>
         <div class="hand">
-            <card ng-repeat="card in me.hand" card="card" ng-class="{viewing: vars.viewing === card.id}" ng-click="viewCard(card.id)"></card>
+            <card ng-repeat="card in me.hand" card="card" ng-class="{viewing: vars.viewing === card.text}" ng-click="viewCard(card.text)"></card>
         </div>
         <div class="actions">
             <button class="button gold select" ng-show="vars.viewing && vars.selected.length < vars.numToSelect" ng-click="selectViewedCard()">Select Card</button>

@@ -9,7 +9,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- injector:js -->
-        <script src="js/app.min.js"></script>
+        <script src="js/bower_components/angular/angular.min.js"></script>
+        <script src="js/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="js/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="js/util.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/filters/trust.js"></script>
+        <script src="js/models/game.js"></script>
+        <script src="js/services/api.js"></script>
+        <script src="js/services/game.js"></script>
+        <script src="js/services/sse.js"></script>
+        <script src="js/controllers/hosting.js"></script>
+        <script src="js/controllers/index.js"></script>
+        <script src="js/controllers/lobby.js"></script>
+        <script src="js/controllers/main.js"></script>
+        <script src="js/controllers/playing.js"></script>
+        <script src="js/directives/card.js"></script>
+        <script src="js/directives/fillRemainingSpace.js"></script>
         <!-- endinjector -->
     </head>
     <body ng-controller="mainCtrl">

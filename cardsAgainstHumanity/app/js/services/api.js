@@ -46,6 +46,21 @@ app.service('api', ['$http', '$rootScope', function($http, $root) {
                 data.czarId = czarId;
             }
             return _post('/nextRound', data);
+        },
+        sendCards: function(gameId, userId, cards) {
+            var data = {
+                gameId: gameId,
+                userId: userId,
+                cards: []
+            };
+            if (cards[0].text) {
+                cards.forEach(function(card) {
+                    data.cards.push(card.text);
+                });
+            } else {
+                data.cards = cards;
+            }
+            return _post('/sendCards', data);
         }
     };
 }]);

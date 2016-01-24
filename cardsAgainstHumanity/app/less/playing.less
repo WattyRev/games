@@ -8,10 +8,15 @@
         height:80px;
         display:block;
         overflow: visible;
+        transition: .3s height;
 
         &:last-child {
             height: auto;
             overflow: initial;
+        }
+
+        &.viewing {
+            height: 355px;
         }
     }
 }

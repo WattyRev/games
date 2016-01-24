@@ -88,6 +88,9 @@ function reloadBlackDeck() {
     $game->blackDiscarded = array();
 }
 
+// Increase Round count
+$game->round = $game->round + 1;
+
 // Update Log
 array_push($game->log, array(
     'message'=>$game->players[$nextCzar]->name . ' is now the Czar.',

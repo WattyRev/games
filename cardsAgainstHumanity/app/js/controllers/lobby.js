@@ -15,7 +15,7 @@ app.controller('lobbyCtrl', ['$scope', '$state', 'gameService', '$rootScope', fu
         function getData() {
             $scope.game = $game.data;
             $scope.$apply();
-            if ($scope.game.started) {
+            if ($scope.game.started && $scope.game.host !== localStorage.userId) {
                 $state.go('playing', {sessionId: $scope.game.id});
             }
         }
