@@ -1,5 +1,5 @@
-<div class="{{card.color}}">
-    <p>{{card.text}}</p>
+<div class="{{card.color}} center">
+    <p ng-bind-html="text | trust"></p>
 
     <div class="logo">
         <img src="/resources/logo.svg" />

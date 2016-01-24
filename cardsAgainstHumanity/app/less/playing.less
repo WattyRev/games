@@ -1,0 +1,17 @@
+.hand {
+    &:after {
+        content: '';
+        clear:both;
+        display:block;
+    }
+    card {
+        height:80px;
+        display:block;
+        overflow: visible;
+
+        &:last-child {
+            height: auto;
+            overflow: initial;
+        }
+    }
+}

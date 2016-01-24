@@ -5,6 +5,7 @@ var js = [
     'app/js/vendor/**.js',
     'app/js/util.js',
     'app/js/app.js',
+    'app/js/filters/**.js',
     'app/js/models/**.js',
     'app/js/services/**.js',
     'app/js/controllers/**.js',
@@ -60,8 +61,8 @@ module.exports = function(grunt) {
     },
     injector: {
         options: {
-            ignorePath: 'app//',
-            relative: true,
+            ignorePath: 'app/',
+            addRootSlash: false,
         },
         dev: {
           files: {

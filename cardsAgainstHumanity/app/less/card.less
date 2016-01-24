@@ -2,12 +2,19 @@ card >div {
     width: 255px;
     height: 355px;
     border-radius: 15px;
+    padding: 23px;
+    position: relative;
+    border: 1px solid @black;
 
     p {
         margin: 0;
-        font-size: 24px;
+        font-size: 23px;
     }
     .logo {
+        position: absolute;
+        bottom: 25px;
+        left: 25px;
+
         img {
             width: 28px;
             display: inline-block;
@@ -15,7 +22,15 @@ card >div {
         p {
             font-size: 8px;
             display: inline-block;
+            position: relative;
+            top: -5px;
         }
+    }
+    .blank {
+        display: inline-block;
+        width: 96%;
+        border-bottom: 1px solid white;
+        height: 30px;
     }
 
     &.black {
@@ -24,5 +39,8 @@ card >div {
         p {
             color: @white;
         }
+    }
+    &.white {
+        background: @white;
     }
 }

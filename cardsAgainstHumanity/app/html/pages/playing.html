@@ -1,0 +1,34 @@
+<div class="header">
+    <h2>Cards Against Humanity</h2>&nbsp;
+    <h3>Playing {{game.nickname}}</h3>
+</div>
+<div class="container">
+    <div class="czar" ng-show="me.isCzar">
+        <h2 class="text-center">You are the Czar.</h2>
+        <card card="game.currentBlack"></card>
+    </div>
+
+    <div ng-hide="me.isCzar">
+        <h2 class="text-center">Select a Card</h2>
+        <div class="hand">
+            <card ng-repeat="card in me.hand" card="card" ng-class="{viewing: vars.viewing === card.id}" ng-click="viewCard(card.id)"></card>
+        </div>
+        <div class="actions">
+            <button class="button gold select" ng-show="vars.viewing && vars.selected.length < vars.numToSelect" ng-click="selectViewedCard()">Select Card</button>
+            <button class="button gold select" ng-show="vars.selected.length" ng-click="sendCards()">Send Card</button>
+        </div>
+    </div>
+
+    <div class="log">
+        <ul class="list-group">
+            <li ng-repeat="item in game.log">
+                <i ng-if="item.from === 'system'">{{item.message}} <span class="timestamp">{{item.time}}</span></i>
+                <span ng-if="item.from !== 'system'"><strong>{{item.user}}:</strong> {{item.message}} <span class="timestamp">{{item.time}}</span></span>
+            </li>
+        </ul>
+        <form class="input-group" ng-submit="sendMessage(chatMessage)" ng-hide="game.amHost()">
+            <input type="text" ng-model="chatMessage" placeholder="Type a message" required/>
+            <button class="button-addon" type="submit">Send</button>
+        </form>
+    </div>
+</div>

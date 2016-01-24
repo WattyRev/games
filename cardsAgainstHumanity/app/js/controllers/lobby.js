@@ -15,6 +15,9 @@ app.controller('lobbyCtrl', ['$scope', '$state', 'gameService', '$rootScope', fu
         function getData() {
             $scope.game = $game.data;
             $scope.$apply();
+            if ($scope.game.started) {
+                $state.go('playing', {sessionId: $scope.game.id});
+            }
         }
         function init() {
             var functions = [
